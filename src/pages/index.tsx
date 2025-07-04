@@ -5,6 +5,7 @@ import { Key } from "lucide-react";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const Home = () => {
   const [menus, setMenus] = useState<IMenu[]>([]);
@@ -43,9 +44,11 @@ const Home = () => {
               </div>
             </CardContent>
             <CardFooter>
-              <Button className="w-full font-bold" size="lg">
-                Detail Menu
-              </Button>
+              <Link href={"/menu/${menu.id}"} className="w-full">
+                <Button className="w-full font-bold" size="lg">
+                  Detail Menu
+                </Button>
+              </Link>
             </CardFooter>
           </Card>
         ))}
